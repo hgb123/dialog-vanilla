@@ -23,7 +23,8 @@ function Dialog({
   if (!containerEl) return;
 
   const setDialogOpen = (open) => {
-    dialogContainerEl.hidden = !open;
+    dialogContainerEl.style.visibility = open ? "visible" : "hidden";
+    dialogContainerEl.style.opacity = open ? 1 : 0;
   };
 
   const doConfirm = (yes) => {
@@ -33,7 +34,9 @@ function Dialog({
   };
 
   const dialogContainerEl = document.createElement("div");
-  dialogContainerEl.hidden = true;
+  dialogContainerEl.classList.add("dialog-container");
+  dialogContainerEl.style.visibility = "hidden";
+  dialogContainerEl.style.opacity = 0;
 
   const backdropEl = document.createElement("div");
   backdropEl.classList.add("backdrop");

@@ -7,6 +7,10 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
+.dialog-container {
+  transition: opacity 0.25s, visibility 0.25s;
+}
+
 .dialog {
   position: absolute;
   padding: 1rem;
